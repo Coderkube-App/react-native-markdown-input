@@ -1,5 +1,5 @@
 {
-  "name": "react-native-markdown-input",
+  "name": "react-native-pure-markdown-input",
   "version": "1.0.0",
   "description": "A high-performance, real-time Markdown-highlighted TextInput component for React Native and Expo.",
   "main": "dist/index.js",

@@ -1,11 +1,11 @@
-# react-native-markdown-input 📝✨
+# react-native-pure-markdown-input 📝✨
 
 A high-performance, real-time Markdown-highlighted TextInput component for React Native and Expo. Built completely in TypeScript with zero heavy dependencies or WebViews.
 
-Unlike other editors that rely on heavy, slow WebViews or suffer from typing lag and cursor jumping, `react-native-markdown-input` uses native platforms' rich text layout engines (CoreText / Layout) to provide smooth, high-fidelity real-time syntax styling in standard multiline input fields.
+Unlike other editors that rely on heavy, slow WebViews or suffer from typing lag and cursor jumping, `react-native-pure-markdown-input` uses native platforms' rich text layout engines (CoreText / Layout) to provide smooth, high-fidelity real-time syntax styling in standard multiline input fields.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/username/react-native-markdown-input/main/assets/demo.gif" width="360" alt="react-native-markdown-input Demo" />
+  <img src="https://raw.githubusercontent.com/username/react-native-pure-markdown-input/main/assets/demo.gif" width="360" alt="react-native-pure-markdown-input Demo" />
 </p>
 
 ---
@@ -26,9 +26,9 @@ Unlike other editors that rely on heavy, slow WebViews or suffer from typing lag
 Install the library in your React Native project:
 
 ```bash
-npm install react-native-markdown-input
+npm install react-native-pure-markdown-input
 # or
-yarn add react-native-markdown-input
+yarn add react-native-pure-markdown-input
 ```
 
 ---
@@ -40,7 +40,7 @@ Simply replace your standard `TextInput` with `<MarkdownInput />`.
 ```tsx
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
-import { MarkdownInput } from 'react-native-markdown-input';
+import { MarkdownInput } from 'react-native-pure-markdown-input';
 
 export default function App() {
   const [text, setText] = useState(
