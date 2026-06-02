@@ -2,11 +2,11 @@
 
 A high-performance, real-time Markdown-highlighted TextInput component for React Native and Expo. Built completely in TypeScript with zero heavy dependencies or WebViews.
 
-Unlike other editors that rely on heavy, slow WebViews or suffer from typing lag and cursor jumping, `react-native-pure-markdown-input` uses native platforms' rich text layout engines (CoreText / Layout) to provide smooth, high-fidelity real-time syntax styling in standard multiline input fields.
-
 <p align="center">
-  <img src="https://raw.githubusercontent.com/username/react-native-pure-markdown-input/main/assets/demo.gif" width="360" alt="react-native-pure-markdown-input Demo" />
+  <img src="./assets/cli_demo.svg" alt="react-native-markdown-input Demo" width="100%" style="max-width: 860px;" />
 </p>
+
+Unlike other editors that rely on heavy, slow WebViews or suffer from typing lag and cursor jumping, `react-native-pure-markdown-input` uses native platforms' rich text layout engines (CoreText / Layout) to provide smooth, high-fidelity real-time syntax styling in standard multiline input fields.
 
 ---
 

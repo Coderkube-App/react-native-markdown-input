@@ -1,0 +1,325 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480">
+  <defs>
+    <style><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700&display=swap');
+      .fm{font-family:'Fira Code',monospace}.fs{font-family:'Inter',sans-serif}
+      
+      /* Smooth Floating Micro-Animations */
+      @keyframes floatPane {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      .fp-card1 { animation: floatPane 5s ease-in-out infinite; }
+      .fp-card2 { animation: floatPane 5s ease-in-out infinite 1.5s; }
+      .fp-card3 { animation: floatPane 5s ease-in-out infinite 3s; }
+      .fp-phone { animation: floatPane 6s ease-in-out infinite 0.5s; }
+
+      /* Pulsing active neon glowing toolbar button */
+      @keyframes pulseNeon {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.4)); opacity: 0.8; }
+        50% { filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.9)); opacity: 1; }
+      }
+      .active-neon { animation: pulseNeon 2s ease-in-out infinite; }
+
+      /* Dash flow for AST connector channels */
+      @keyframes dashFlow { to { stroke-dashoffset: -20px; } }
+      .ast-pipeline { stroke-dasharray: 5,4; animation: dashFlow 1s linear infinite; }
+
+      /* Faded markdown token pulsation */
+      @keyframes pulseSyntax {
+        0%, 100% { opacity: 0.25; }
+        50% { opacity: 0.55; }
+      }
+      .fade-syntax { animation: pulseSyntax 3s ease-in-out infinite; }
+
+      /* Bulletproof scaleX-based typewriter animation (Safari & Markdown compliant) */
+      @keyframes type1 {
+        0%, 5% { transform: scaleX(1); }
+        22%, 100% { transform: scaleX(0); }
+      }
+      @keyframes type2 {
+        0%, 45% { transform: scaleX(1); }
+        67%, 100% { transform: scaleX(0); }
+      }
+      .cov1 {
+        transform-origin: 252px 0px;
+        animation: type1 8s linear infinite;
+      }
+      .cov2 {
+        transform-origin: 282px 0px;
+        animation: type2 8s linear infinite;
+      }
+
+      /* Sequential console logs visibility */
+      @keyframes showL1 { 0%, 23.9% { opacity: 0; } 24%, 100% { opacity: 1; } }
+      @keyframes showL2 { 0%, 67.9% { opacity: 0; } 68%, 100% { opacity: 1; } }
+      .l1 { animation: showL1 8s step-end infinite; }
+      .l2 { animation: showL2 8s step-end infinite; }
+
+      /* Cursor movement matching scaleX */
+      @keyframes cursor1 { 
+        0%, 5% { transform: translateX(0); opacity: 1; } 
+        22% { transform: translateX(225px); opacity: 1; } 
+        26%, 100% { transform: translateX(225px); opacity: 0; } 
+      }
+      @keyframes cursor2 { 
+        0%, 45% { transform: translateX(0); opacity: 0; } 
+        46% { transform: translateX(0); opacity: 1; } 
+        67% { transform: translateX(255px); opacity: 1; } 
+        71%, 100% { transform: translateX(255px); opacity: 0; } 
+      }
+      .cur1 { animation: cursor1 8s linear infinite; }
+      .cur2 { animation: cursor2 8s linear infinite; }
+      
+      @keyframes bl { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+      .blink { animation: bl 1s step-end infinite; }
+    ]]></style>
+
+    <!-- Drop Shadows and Glows -->
+    <filter id="ds"><feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity=".55"/></filter>
+    <filter id="glow-indigo" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Radial Gradients for cosmic background ambiance -->
+    <radialGradient id="amb-left" cx="20%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="amb-right" cx="80%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect fill="#070a13" width="860" height="480" rx="16" />
+  <rect fill="url(#amb-left)" width="860" height="480" rx="16" />
+  <rect fill="url(#amb-right)" width="860" height="480" rx="16" />
+
+  <!-- Top bar header -->
+  <text class="fs" x="430" y="32" fill="#818cf8" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing="3" opacity="0.6">NATIVE MARKDOWN REFRACTION SYSTEM</text>
+
+  <!-- ============ PIPELINE CHANNELS ============ -->
+  <!-- Header AST Link -->
+  <path class="ast-pipeline" d="M310,135 Q375,135 440,115" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.4" />
+  <!-- Bold AST Link -->
+  <path class="ast-pipeline" d="M310,185 Q375,185 440,240" fill="none" stroke="#e0f2fe" stroke-width="1.5" opacity="0.4" style="animation-delay: 0.3s;" />
+
+  <!-- ============ LEFT: HIGH-FIDELITY MOBILE EDITOR ============ -->
+  <g transform="translate(60, 50)">
+    <g class="fp-phone" filter="url(#ds)">
+      <!-- iPhone Mockup Chassis -->
+      <rect width="250" height="380" rx="28" fill="#1e293b" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" />
+      <rect x="5" y="5" width="240" height="370" rx="24" fill="#0f172a" />
+      
+      <!-- Dynamic Island -->
+      <rect x="85" y="12" width="80" height="15" rx="7.5" fill="#000" />
+      
+      <!-- Editor Canvas Content Area -->
+      <g transform="translate(16, 42)">
+        <!-- Placeholder Header bar -->
+        <rect width="218" height="24" rx="6" fill="#1e293b" opacity="0.5" />
+        <circle cx="12" cy="12" r="4" fill="#6366f1" />
+        <text class="fs" x="24" y="15" fill="#94a3b8" font-size="8.5" font-weight="600">PureMarkdownEditor</text>
+
+        <!-- Live Editor text content lines -->
+        <g transform="translate(4, 52)">
+          <!-- Line 1: Header 1 syntax styled -->
+          <text class="fm" font-size="14" fill="#38bdf8" font-weight="700">
+            <tspan fill="rgba(56,189,248,0.3)"># </tspan>Markdown Editor
+          </text>
+
+          <!-- Line 2: Paragraph text with low-opacity bold syntax markers -->
+          <text class="fs" y="32" font-size="9.5" fill="#cbd5e1" font-weight="400">
+            This is a <tspan class="fade-syntax" fill="#38bdf8" font-weight="700">**</tspan><tspan fill="#e0f2fe" font-weight="700">zero-WebView</tspan><tspan class="fade-syntax" fill="#38bdf8" font-weight="700">**</tspan> native input.
+          </text>
+          
+          <!-- Line 3: Strikethrough Markdown Tag -->
+          <text class="fs" y="52" font-size="9.5" fill="#cbd5e1" font-weight="400">
+            Try <tspan class="fade-syntax" fill="#f43f5e">~~</tspan><tspan fill="#94a3b8" text-decoration="line-through">strikethrough</tspan><tspan class="fade-syntax" fill="#f43f5e">~~</tspan> or inline code
+          </text>
+
+          <!-- Line 4: Code Block Markdown tag -->
+          <text class="fs" y="72" font-size="9.5" fill="#cbd5e1" font-weight="400">
+            blocks like <tspan fill="rgba(167,139,250,0.3)">`</tspan><tspan class="fm" fill="#c084fc" font-size="8.5" font-weight="600">const val = 1;</tspan><tspan fill="rgba(167,139,250,0.3)">`</tspan> easily.
+          </text>
+
+          <!-- Line 5: Dynamic Link Markdown tag -->
+          <text class="fs" y="92" font-size="9.5" fill="#cbd5e1" font-weight="400">
+            Visit <tspan class="fade-syntax" fill="#38bdf8">[</tspan><tspan fill="#38bdf8" font-weight="600">GitHub Links</tspan><tspan class="fade-syntax" fill="#38bdf8">]</tspan><tspan class="fade-syntax" fill="rgba(56,189,248,0.35)">(https://git.io)</tspan>.
+          </text>
+
+          <!-- Line 6: Blockquote markup -->
+          <g transform="translate(0, 114)">
+            <line x1="0" y1="0" x2="0" y2="28" stroke="#6366f1" stroke-width="2" stroke-linecap="round" />
+            <text class="fs" x="8" y="10" font-size="9" fill="#94a3b8" font-style="italic">
+              Smooth, low-opacity tokens for
+            </text>
+            <text class="fs" x="8" y="22" font-size="9" fill="#94a3b8" font-style="italic">
+              formatting with zero typing lag!
+            </text>
+          </g>
+        </g>
+
+        <!-- API Stat HUD (onMarkdownParse callback counts) -->
+        <g transform="translate(0, 204)">
+          <rect width="218" height="18" rx="4" fill="rgba(99, 102, 241, 0.08)" stroke="rgba(99, 102, 241, 0.2)" stroke-width="0.8" />
+          <text class="fm" x="8" y="12" fill="#818cf8" font-size="7.5" font-weight="500">
+            onMarkdownParse -&gt; <tspan fill="#34d399">Words: 24</tspan> | Chars: 156 | Lines: 7
+          </text>
+        </g>
+
+        <!-- Simulated Mobile keyboard area -->
+        <g transform="translate(0, 228)" opacity="0.8">
+          <rect width="218" height="89" rx="10" fill="#1e293b" opacity="0.6" />
+          <path d="M12,20 L36,20 M12,32 L48,32 M12,44 L42,44 M12,56 L30,56" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+          <circle cx="180" cy="40" r="16" fill="rgba(99, 102, 241, 0.1)" stroke="#6366f1" stroke-width="1.5" class="active-neon" />
+          <text class="fs" x="180" y="43" fill="#818cf8" font-size="10" font-weight="700" text-anchor="middle">A</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ FLOATING NEON QUICK-BAR TOOLBAR ============ -->
+  <g transform="translate(345, 115)" filter="url(#ds)">
+    <rect width="36" height="200" rx="18" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(255,255,255,0.06)" stroke-width="1.2" />
+    
+    <!-- Active Button Glow Indicator (Bold) -->
+    <rect class="active-neon" x="4" y="12" width="28" height="28" rx="14" fill="rgba(99, 102, 241, 0.15)" stroke="#6366f1" stroke-width="1.5" />
+    
+    <!-- Format Icons -->
+    <text class="fs" x="18" y="31" fill="#818cf8" font-size="11" font-weight="700" text-anchor="middle">B</text>
+    <text class="fs" x="18" y="65" fill="#94a3b8" font-size="11" font-style="italic" font-weight="700" text-anchor="middle">I</text>
+    <text class="fs" x="18" y="99" fill="#94a3b8" font-size="10" font-weight="700" text-anchor="middle">H1</text>
+    <text class="fm" x="18" y="133" fill="#94a3b8" font-size="10" font-weight="600" text-anchor="middle">&lt;&gt;</text>
+    <text class="fs" x="18" y="167" fill="#94a3b8" font-size="14" font-weight="600" text-anchor="middle">”</text>
+  </g>
+
+  <!-- ============ RIGHT: TOKENIZER & REFRACTION LAYERS ============ -->
+
+  <!-- CARD 1: THE SYNTAX TOKENIZER -->
+  <g transform="translate(420, 60)">
+    <g class="fp-card1" filter="url(#ds)">
+      <rect width="380" height="110" rx="12" fill="rgba(30, 41, 59, 0.7)" stroke="rgba(99, 102, 241, 0.25)" stroke-width="1.5" />
+      <rect width="380" height="22" rx="12" fill="#1e293b" opacity="0.6" />
+      <rect y="16" width="380" height="6" fill="#1e293b" opacity="0.6" />
+      <circle cx="12" cy="11" r="3" fill="#ef4444" /><circle cx="20" cy="11" r="3" fill="#f59e0b" /><circle cx="28" cy="11" r="3" fill="#10b981" />
+      <text class="fs" x="190" y="14" fill="#94a3b8" font-size="8.5" font-weight="600" text-anchor="middle">Real-Time Syntax Parser Pipeline</text>
+
+      <g transform="translate(16, 38)">
+        <!-- Input state visual -->
+        <text class="fm" font-size="9" fill="#94a3b8">RAW : <tspan fill="#38bdf8">"# Markdown Editor"</tspan></text>
+        <line x1="0" y1="18" x2="348" y2="18" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+        
+        <!-- Live Token segmentation visual -->
+        <g transform="translate(0, 32)">
+          <text class="fm" font-size="9" fill="#94a3b8">AST :</text>
+          
+          <g transform="translate(40, -8)">
+            <!-- Token 1 -->
+            <rect width="76" height="16" rx="4" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.4)" stroke-width="1" />
+            <text class="fm" x="38" y="11" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">TAG: HEADER1</text>
+            
+            <!-- Arrow -->
+            <text class="fm" x="84" y="12" fill="#475569" font-size="10">-&gt;</text>
+            
+            <!-- Token 2 -->
+            <g transform="translate(98, 0)">
+              <rect width="180" height="16" rx="4" fill="rgba(129,140,248,0.12)" stroke="rgba(129,140,248,0.4)" stroke-width="1" />
+              <text class="fm" x="90" y="11" fill="#818cf8" font-size="7.5" font-weight="700" text-anchor="middle">SEGMENT: "Markdown Editor"</text>
+            </g>
+          </g>
+        </g>
+        
+        <text class="fs" y="58" fill="#475569" font-size="8" font-weight="600" letter-spacing="0.5">ZERO-WEBVIEW NATIVE RICH-TEXT MAPPING</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- CARD 2: THE OPACITY REFRACTOR -->
+  <g transform="translate(420, 185)">
+    <g class="fp-card2" filter="url(#ds)">
+      <rect width="380" height="110" rx="12" fill="rgba(30, 41, 59, 0.7)" stroke="rgba(251, 113, 133, 0.25)" stroke-width="1.5" />
+      <rect width="380" height="22" rx="12" fill="#1e293b" opacity="0.6" />
+      <rect y="16" width="380" height="6" fill="#1e293b" opacity="0.6" />
+      <circle cx="12" cy="11" r="3" fill="#ef4444" /><circle cx="20" cy="11" r="3" fill="#f59e0b" /><circle cx="28" cy="11" r="3" fill="#10b981" />
+      <text class="fs" x="190" y="14" fill="#94a3b8" font-size="8.5" font-weight="600" text-anchor="middle">Marker Opacity Refraction Engine</text>
+
+      <g transform="translate(16, 38)">
+        <!-- Input state visual -->
+        <text class="fm" font-size="9" fill="#94a3b8">INPUT  : <tspan fill="#cbd5e1">"This is a **zero-WebView**"</tspan></text>
+        <line x1="0" y1="18" x2="348" y2="18" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+        
+        <!-- Live opacity fading demonstration -->
+        <g transform="translate(0, 32)">
+          <!-- Markdown Marker 1 -->
+          <rect x="52" y="-8" width="22" height="16" rx="4" fill="rgba(244,63,94,0.08)" stroke="rgba(244,63,94,0.3)" stroke-width="1" />
+          <text class="fm" x="63" y="3" fill="#f43f5e" font-size="8" font-weight="700" text-anchor="middle">**</text>
+          <text class="fs" x="63" y="18" fill="#f43f5e" font-size="6.5" font-weight="700" text-anchor="middle" opacity="0.7">OPACITY 0.3</text>
+          
+          <!-- Styled content -->
+          <rect x="82" y="-8" width="102" height="16" rx="4" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.3)" stroke-width="1" />
+          <text class="fs" x="133" y="3" fill="#10b981" font-size="7.5" font-weight="700" text-anchor="middle">zero-WebView</text>
+          <text class="fs" x="133" y="18" fill="#10b981" font-size="6.5" font-weight="700" text-anchor="middle" opacity="0.7">FONT-WEIGHT 700</text>
+
+          <!-- Markdown Marker 2 -->
+          <rect x="192" y="-8" width="22" height="16" rx="4" fill="rgba(244,63,94,0.08)" stroke="rgba(244,63,94,0.3)" stroke-width="1" />
+          <text class="fm" x="203" y="3" fill="#f43f5e" font-size="8" font-weight="700" text-anchor="middle">**</text>
+          <text class="fs" x="203" y="18" fill="#f43f5e" font-size="6.5" font-weight="700" text-anchor="middle" opacity="0.7">OPACITY 0.3</text>
+
+          <text class="fm" x="0" y="3" fill="#94a3b8" font-size="9">OUTPUT :</text>
+        </g>
+        
+        <text class="fs" y="58" fill="#475569" font-size="8" font-weight="600" letter-spacing="0.5">CLEAN WRITING SYSTEM • NO EDIT LAG</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- CARD 3: REAL-TIME CLI CONSOLE PANEL -->
+  <g transform="translate(420, 310)">
+    <g class="fp-card3" filter="url(#ds)">
+      <rect width="380" height="110" rx="12" fill="rgba(13, 17, 23, 0.95)" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" />
+      <rect width="380" height="22" rx="12" fill="#161b22" />
+      <rect y="16" width="380" height="6" fill="#161b22" />
+      <circle cx="12" cy="11" r="3" fill="#ff5f56" /><circle cx="20" cy="11" r="3" fill="#ffbd2e" /><circle cx="28" cy="11" r="3" fill="#27c93f" />
+      <text class="fs" x="190" y="14" fill="#8b949e" font-size="8.5" font-weight="600" text-anchor="middle">developer-console — npm install</text>
+      <line x1="0" y1="22" x2="380" y2="22" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+
+      <!-- Terminal Output Content -->
+      <g transform="translate(16, 36)">
+        <!-- Line 1 Prompt -->
+        <text class="fm" y="4" font-size="9.5" fill="#58a6ff" font-weight="700">❯</text>
+        <!-- Line 1 Command text (Fully visible and robust!) -->
+        <text class="fm" x="12" y="4" font-size="9.5" fill="#c9d1d9">npm i react-native-markdown-input</text>
+        <!-- Dynamic Typewriter Cover Rect (Safari / Cross-Browser safe scaleX transition) -->
+        <rect class="cov1" x="12" y="-6" width="240" height="13" fill="#0d1117" />
+        <!-- Floating typing cursor -->
+        <rect class="cur1 blink" x="12" y="-6" width="5" height="11" fill="#58a6ff" />
+
+        <!-- Success Log -->
+        <g class="l1">
+          <text class="fm" x="12" y="20" fill="#57ab5a" font-size="9">&#10003; Installed react-native-markdown-input@1.0.0 (Zero WebViews)</text>
+        </g>
+
+        <!-- Line 2 Prompt -->
+        <g class="l1">
+          <text class="fm" y="38" font-size="9.5" fill="#58a6ff" font-weight="700">❯</text>
+          <!-- Line 2 Command text -->
+          <text class="fm" x="12" y="38" font-size="9.5" fill="#c9d1d9">node run-performance-bench.js</text>
+          <!-- Dynamic Typewriter Cover Rect -->
+          <rect class="cov2" x="12" y="28" width="270" height="13" fill="#0d1117" />
+          <!-- Floating typing cursor -->
+          <rect class="cur2 blink" x="12" y="28" width="5" height="11" fill="#58a6ff" />
+        </g>
+
+        <!-- Performance bench log -->
+        <g class="l2">
+          <text class="fm" x="12" y="54" fill="#818cf8" font-size="9">
+            [OK] Native parser initialized in 0.08ms
+          </text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
