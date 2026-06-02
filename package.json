@@ -1,6 +1,6 @@
 {
   "name": "react-native-pure-markdown-input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A high-performance, real-time Markdown-highlighted TextInput component for React Native and Expo.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
