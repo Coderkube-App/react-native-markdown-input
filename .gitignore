@@ -184,5 +184,4 @@ public/
 # Demos (ignore all except TestKeyboardBare)
 demos/*
 !demos/TestKeyboardBare/
-branch_structure.json
-.gitignore
+
